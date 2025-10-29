@@ -197,11 +197,12 @@ Clearing plan cache is a valuable troubleshooting technique when monitoring tool
 
 Identify outliers in the transaction distribution chart.
 
-https://www.notion.so/image/attachment%3Ad8124fb4-050a-4125-8873-8dcf34c302d3%3Aimage.png?table=block&id=29a53698-6d16-8035-90bb-c9f7ff72ed64&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="1120" height="646" alt="image" src="https://github.com/user-attachments/assets/6bfc815e-d9c1-443a-ba4d-7229e5442019" />
 
-https://www.notion.so/image/attachment%3A1f4d750c-d27c-43be-805e-ef9cea7ef898%3Aimage.png?table=block&id=29a53698-6d16-8024-95ea-f4b6ba27ceef&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="885" height="733" alt="image" src="https://github.com/user-attachments/assets/ea315273-8c65-479f-9d61-f2452cfcda4a" />
 
-https://www.notion.so/image/attachment%3Aa053c2a3-cc02-4c97-a434-8744397ef58e%3Aimage.png?table=block&id=29a53698-6d16-8062-b757-fcf917c28e22&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="2048" height="1038" alt="image" src="https://github.com/user-attachments/assets/3021598c-d28d-45fa-8123-b55ad74d5a4b" />
+
 
 Copy the parameter values together with the SQL query and paste them into a text editor.
 
@@ -215,7 +216,8 @@ If it runs fast, it indicates the plan cache is pinned to an old (suboptimal) pl
 
 If it runs fast, proceed with the following. If it remains slow, further tuning is required.
 
-https://www.notion.so/image/attachment%3A3539fa9c-f430-4b2a-ac72-ccb6fdd54824%3Aimage.png?table=block&id=29a53698-6d16-8009-9a89-cc64df4b9eef&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="1583" height="662" alt="image" src="https://github.com/user-attachments/assets/00e0d2f3-999c-417f-83b0-34db5f7b5a0d" />
+
 
 ``` sql
 SELECT * FROM MONITOR.dbo.DBA_SESSIONS_DETAIL
@@ -226,9 +228,9 @@ ORDER BY COLLECTION_DATE
 ```
 Compare the ELAPSED_SEC between slow and fast executions.
 
-https://www.notion.so/image/attachment%3A8ec6b3b8-fbbc-457c-810d-6861e726be1a%3Aimage.png?table=block&id=29a53698-6d16-800d-bcd3-cd75cb5c624e&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="2048" height="567" alt="image" src="https://github.com/user-attachments/assets/1413f946-4fac-47e5-af48-d9d7d8b8e82b" />
 
-https://www.notion.so/image/attachment%3A4b3f2b79-814a-4689-a89d-03af5e02011f%3Aimage.png?table=block&id=29a53698-6d16-807c-a907-c29af60ce694&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
+<img width="1453" height="586" alt="image" src="https://github.com/user-attachments/assets/b5c2d2b0-92c3-4cc5-a960-43e9c721a289" />
 
 
 The slow and fast executions will likely have different plan handle values.
@@ -243,7 +245,7 @@ At the very end, the ParameterList values will be set differently.
 
 After confirming the differences, clear the plan cache for the query that ran slowly.
 
+<img width="1665" height="1053" alt="image" src="https://github.com/user-attachments/assets/e56be2a9-35a2-47ce-948e-011cc62e6510" />
 
-https://www.notion.so/image/attachment%3A1339c99f-6302-4c03-b775-ea6696436c6f%3Aimage.png?table=block&id=29a53698-6d16-8095-a71c-c9ce7bd2b2d4&spaceId=0af99f2e-8fd6-4b1d-b06a-d80ab9501941&width=2000&userId=708820b9-e2a0-43be-8e24-39679e79f0ff&cache=v2
 
 DBCC FREEPROCCACHE (plan_handle) will remove the incorrectly fixed plan cache entry.
