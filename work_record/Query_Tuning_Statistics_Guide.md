@@ -34,4 +34,5 @@ SET STATISTICS PROFILE OFF;
 ## Notes
 - Session-scoped: only affects the current session.
 - Prefer non-production environments when possible.
+
 - For production-friendly insights, consider Query Store or `SET STATISTICS XML ON`.

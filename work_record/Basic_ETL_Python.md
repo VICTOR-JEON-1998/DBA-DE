@@ -96,3 +96,25 @@ When Second Load wiht same data  : 496 row
 
 
 Next, i will resolve the issue to ensure Idempotency
+
+## 2025-10-30 DataStage ETL job automation and migration
+- Created DSX template `templates/cd_sales_payment_detail_template.dsx` with placeholders for job name, source SQL, and target.
+- Added Python CLI `scripts/datastage_cli.py` to render template, import via istool, compile and run via dsjob.
+- Modified existing job export `ETL Job files/m_DM_SP_SL_PAY_D_a01` to a full-load migration job:
+  - Source: `BIDWADM_CO.OD_SP_SL_PAY_D` (DW connection `P_DW_VER`), removed date filters.
+  - Target: `BIDWADM.DM_SP_SL_PAY_D`, truncate-before-load.
+  - Preserved transformer mappings; date/time string casting aligned to target schema.
+
+Quick run (optional):
+```bash
+export DS_DOMAIN="domain.host:9080"
+export DS_USER="isadmin"
+export DS_PASS="********"
+export DS_ASBHOST="asbnode1.company.com"
+export DS_PROJECT="BIDW_ADM"
+python scripts/datastage_cli.py
+```
+
+Verification checklist:
+- Compare counts between source and target after run.
+- Check Director logs for warnings/errors.

@@ -1,0 +1,2987 @@
+BEGIN HEADER
+   CharacterSet "CP949"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "CM-PRD-ETL"
+   ToolInstanceID "BIDW_ADM"
+   MDISVersion "1.0"
+   Date "2025-10-30"
+   Time "13.38.34"
+   ServerVersion "11.7"
+END HEADER
+BEGIN DSJOB
+   Identifier "m_DM_SP_SL_PAY_D_a01"
+   DateModified "2025-10-30"
+   TimeModified "13.29.42"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "m_DM_SP_SL_PAY_D_a01"
+      Description "OD_\(D310)\(B9E4)\(ACB0)\(C81C)\(C0C1)\(C138)"
+      NextID "1"
+      Container "V0"
+      FullDescription =+=+=+=
+\(D504)\(B85C)\(ADF8)\(B7A8)\(BA85)     : m_OD_SP_SL_PAY_D_a01
+\(C791)\(C131)\(C790)           : \(C774)\(C6A9)\(D76C)
+\(CD5C)\(CD08) \(AC1C)\(BC1C)\(C77C)\(C790) : 2024.09.09
+\(CD5C)\(C885) \(BCC0)\(ACBD)\(C77C)\(C790) : 2025.02.03
+\(C801)\(C7AC) \(BC29)\(BC95)       : D/I
+\(D0C0)\(AC9F) \(D14C)\(C774)\(BE14)    : BIDWADM_CO.OD_SP_SL_PAY_D(OD_\(D310)\(B9E4)\(ACB0)\(C81C)\(C0C1)\(C138))
+\(C18C)\(C2A4) \(D14C)\(C774)\(BE14)    : ERP.dbo.SP_SL_PAY_D(\(D310)\(B9E4)\(ACB0)\(C81C)\(C0C1)\(C138))
+\(BE44)\(ACE0)              : 2024.10.02(CDC \(C870)\(AC74) \(BCC0)\(ACBD)_\(D64D)\(BBFC)\(AE30)) 
+                      2024.12.04 TIME ZONE \(C801)\(C6A9)
+                      2025.02.03 TOBE ODS(MSSQL) \(D14C)\(C774)\(BE14) \(B808)\(C774)\(C544)\(C6C3) \(BCC0)\(ACBD)\(BD84) \(C801)\(C6A9)
+=+=+=+=
+      JobVersion "56.0.0"
+      BeforeSubr "DSU.JobRunLog\\LB"
+      AfterSubr "DSU.JobRunLog\\LA"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "P_ETL_SET"
+         Prompt "P_ETL_SET parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_ETL_SET"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "P_ERP_MS"
+         Prompt "P_ERP_MS parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_ERP_MS"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "P_DW_VER"
+         Prompt "P_DW_VER parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_DW_VER"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$P_FROMYMD"
+         Prompt "P_FROMYMD"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "$P_TOYMD"
+         Prompt "P_TOYMD"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "S_SP_SL_PAY_D|T_OD_SP_SL_PAY_D|TR"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "949"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Jobs\\01.JOB\\01.ODS\\01.ERP"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V0A0|V0S2|V0S3|V0S4"
+      StageXPos "96|96|672|384"
+      StageYPos "47|240|240|240"
+      StageTypes "ID_PALETTEJOBANNOTATION|CCustomStage.CC_GUI|CCustomStage.CC_GUI|CTransformerStage"
+      NextStageID "7"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "529|48|48|48"
+      StageYSize "144|48|48|48"
+      ContainerViewSizing "0000 0000 1049 0661 0000 0001 0000 0000"
+      StageNames " |S_SP_SL_PAY_D|T_OD_SP_SL_PAY_D|TR"
+      StageTypeIDs " |ODBCConnectorPX|ODBCConnectorPX|CTransformerStage"
+      LinkNames " |L_S_SP_SL_PAY_D| |L_T_OD_SP_SL_PAY_D"
+      LinkHasMetaDatas " |True| |True"
+      LinkTypes " |1| |1"
+      LinkNamePositionXs " |164| |440"
+      LinkNamePositionYs " |267| |265"
+      TargetStageIDs " |V0S4| |V0S3"
+      SourceStageEffectiveExecutionModes " |2| |2"
+      SourceStageRuntimeExecutionModes " |2| |2"
+      TargetStageEffectiveExecutionModes " |2| |2"
+      TargetStageRuntimeExecutionModes " |2| |2"
+      LinkIsSingleOperatorLookup " |False| |False"
+      LinkIsSortSequential " |False| |False"
+      LinkSortMode " |0| |0"
+      LinkPartColMode " |1| |1"
+      LinkSourcePinIDs " |V0S2P1| |V0S4P2"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V0A0"
+      NextID "0"
+      AnnotationType "2"
+      TextFont "\(AD74)\(B9BC)\\10\\0\\0\\0\\400\\129"
+      TextHorizontalJustification "0"
+      TextVerticalJustification "0"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S2"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "S_SP_SL_PAY_D"
+      NextID "2"
+      OutputPins "V0S2P1"
+      StageType "ODBCConnectorPX"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariants"
+         Value "V1;3.5::ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsLibraries"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsVersions"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Orientation"
+         Value "link"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Engine"
+         Value "EE"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Context"
+         Value "source"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectionString"
+         Value "/Connection/DataSource"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Username"
+         Value "/Connection/Username"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Password"
+         Value "/Connection/Password"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value =+=+=+=
+<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>1</Context><Variant type='string'>3.5</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>-1</PartitionType><RCP type='int'>0</RCP></Common><Connection><DataSource modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_ODBC#]]></DataSource><Username modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_USER#]]></Username><Password modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_PWD#]]></Password></Connection><Usage><GenerateSQL type='bool'><![CDATA[0]]></GenerateSQL><EnableQuotedIDs type='bool'><![CDATA[0]]></EnableQuotedIDs><SQL><SelectStatement modified='1' type='string'><![CDATA[SELECT
+       COMP_CD AS COMP_CD
+     , SHOP_CD AS SHOP_CD
+     , TO_CHAR(SL_DT,'YYYYMMDD') AS SL_DT
+     , POS_NO AS POS_NO
+     , RCPT_NO AS RCPT_NO
+     , PYMTHD_SE_CD AS PYMTHD_SE_CD
+     , PAY_SN AS PAY_SN
+     , ISTM_MCNT_CD AS ISTM_MCNT_CD
+     , CPON_NO AS CPON_NO
+     , ARB_PAY_YN AS ARB_PAY_YN
+     , TO_CHAR(VLDT_DT,'YYYYMMDD') AS VLDT_DT
+     , APRV_NO AS APRV_NO
+     , OAPRV_NO AS OAPRV_NO
+     , PUCO_CD AS PUCO_CD
+     , CARD_NO AS CARD_NO
+     , CARD_KD_CD AS CARD_KD_CD
+     , ISSCO_CD AS ISSCO_CD
+     , TRML_NO AS TRML_NO
+     , TO_CHAR(DEAL_DT,'YYYYMMDD') AS DEAL_DT
+     , TO_CHAR(DEAL_TM,'HH24MISS') AS DEAL_TM
+     , PAY_SCH_AMT AS PAY_SCH_AMT
+     , CHGM_AMT AS CHGM_AMT
+     , TOT_PAY_AMT AS TOT_PAY_AMT
+     , DEAL_CRNCY_CD AS DEAL_CRNCY_CD
+     , DEAL_CRNCY_AMT AS DEAL_CRNCY_AMT
+     , DEAL_EXRT AS DEAL_EXRT
+     , REG_MENU_ID AS REG_MENU_ID
+     , REG_ID AS REG_ID
+     , TO_CHAR(REG_DTTM,'YYYY-MM-DD HH24:MI:SS.FF3') AS REG_DTTM
+     , MOD_MENU_ID AS MOD_MENU_ID
+     , MOD_ID AS MOD_ID
+     , TO_CHAR(MOD_DTTM,'YYYY-MM-DD HH24:MI:SS.FF3') AS MOD_DTTM
+  FROM BIDWADM_CO.OD_SP_SL_PAY_D
+;]]><ReadStatementFromFile type='bool'><![CDATA[0]]></ReadStatementFromFile><Tables collapsed='1'></Tables><Parameters collapsed='1'></Parameters><Columns collapsed='1'></Columns></SelectStatement><EnablePartitioning collapsed='1' type='bool'><![CDATA[0]]></EnablePartitioning></SQL><Transaction><RecordCount modified='1' type='int'><![CDATA[#P_ETL_SET.$P_ETL_RCNT#]]></RecordCount><EndOfWave collapsed='1' type='int'><![CDATA[0]]></EndOfWave></Transaction><Session><IsolationLevel modified='1' type='int'><![CDATA[1]]></IsolationLevel><AutocommitMode modified='1' type='int'><![CDATA[0]]></AutocommitMode><ArraySize modified='1' type='int'><![CDATA[#P_ETL_SET.$P_ETL_ARSZ#]]></ArraySize><SchemaReconciliation><FailOnSizeMismatch type='bool'><![CDATA[1]]></FailOnSizeMismatch><FailOnTypeMismatch type='bool'><![CDATA[1]]></FailOnTypeMismatch><FailOnCodePageMismatch type='bool'><![CDATA[0]]></FailOnCodePageMismatch></SchemaReconciliation><PassLobLocator collapsed='1' type='bool'><![CDATA[0]]></PassLobLocator><CodePage collapsed='1' type='int'><![CDATA[0]]></CodePage></Session><BeforeAfter collapsed='1' type='bool'><![CDATA[0]]></BeforeAfter><LimitRows collapsed='1' type='bool'><![CDATA[0]]></LimitRows></Usage></Properties >
+=+=+=+=
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S2P1"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "L_S_SP_SL_PAY_D"
+      Partner "V0S4|V0S4P1"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "lookup\\type"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "COMP_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "4"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "4"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "COMP_CD"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SHOP_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "10"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "SHOP_CD"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SL_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "8"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "SL_DT"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "POS_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "10"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "POS_NO"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RCPT_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "10"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "RCPT_NO"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PYMTHD_SE_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "1"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "1"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PYMTHD_SE_CD"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PAY_SN"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "4"
+         Precision "10"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "11"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PAY_SN"
+         APTFieldProp "quote=none"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ISTM_MCNT_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "2"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "2"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ISTM_MCNT_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CPON_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "2"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CPON_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ARB_PAY_YN"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "1"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "1"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ARB_PAY_YN"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VLDT_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "VLDT_DT"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "APRV_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "APRV_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "OAPRV_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "OAPRV_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PUCO_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "4"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "4"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PUCO_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CARD_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "200"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "200"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CARD_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CARD_KD_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "10"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CARD_KD_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ISSCO_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "10"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ISSCO_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "TRML_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "TRML_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "10"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_DT"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_TM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "8"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_TM"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PAY_SCH_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PAY_SCH_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CHGM_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CHGM_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "TOT_PAY_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "TOT_PAY_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_CRNCY_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "3"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "3"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_CRNCY_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_CRNCY_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_CRNCY_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_EXRT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "12"
+         Scale "6"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "14"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_EXRT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_MENU_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "100"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "100"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_MENU_ID"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "30"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "30"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_ID"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_DTTM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "34"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "34"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_DTTM"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_MENU_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "100"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "100"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_MENU_ID"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "30"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "30"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_ID"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_DTTM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "12"
+         Precision "34"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "34"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\SQLServer_dev_ERP_TT\\ERP_TT.dbo.SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_DTTM"
+         ExtendedPrecision "1"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SchemaFormat"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "164"
+      TopTextPos "267"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S3"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "T_OD_SP_SL_PAY_D"
+      NextID "2"
+      InputPins "V0S3P1"
+      StageType "ODBCConnectorPX"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariants"
+         Value "V1;3.5::ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsLibraries"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsVersions"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Orientation"
+         Value "link"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Engine"
+         Value "EE"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Context"
+         Value "target"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectionString"
+         Value "/Connection/DataSource"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Username"
+         Value "/Connection/Username"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Password"
+         Value "/Connection/Password"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value =+=+=+=
+<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>2</Context><Variant type='string'>3.5</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>-1</PartitionType><RCP type='int'>0</RCP></Common><Connection><DataSource modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_ODBC#]]></DataSource><Username modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_USER#]]></Username><Password modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_PWD#]]></Password></Connection><Usage><WriteMode modified='1' type='int'><![CDATA[0]]></WriteMode><GenerateSQL modified='1' type='bool'><![CDATA[1]]></GenerateSQL><TableName modified='1' type='string'><![CDATA[BIDWADM.DM_SP_SL_PAY_D]]></TableName><EnableQuotedIDs type='bool'><![CDATA[0]]></EnableQuotedIDs><SQL></SQL><TableAction collapsed='1' modified='1' type='int'><![CDATA[0]]></TableAction><Transaction><RecordCount modified='1' type='int'><![CDATA[#P_ETL_SET.$P_ETL_RCNT#]]></RecordCount></Transaction><Session><IsolationLevel modified='1' type='int'><![CDATA[1]]></IsolationLevel><AutocommitMode type='int'><![CDATA[0]]></AutocommitMode><ArraySize modified='1' type='int'><![CDATA[#P_ETL_SET.$P_ETL_ARSZ#]]></ArraySize><SchemaReconciliation><FailOnSizeMismatch type='bool'><![CDATA[1]]></FailOnSizeMismatch><FailOnTypeMismatch type='bool'><![CDATA[1]]></FailOnTypeMismatch><FailOnCodePageMismatch type='bool'><![CDATA[0]]></FailOnCodePageMismatch><DropUnmatchedFields type='bool'><![CDATA[1]]></DropUnmatchedFields></SchemaReconciliation><CodePage collapsed='1' type='int'><![CDATA[0]]></CodePage><FailOnRowErrorPX type='bool'><![CDATA[1]]></FailOnRowErrorPX></Session><Logging><LogColumnValues collapsed='1' type='bool'><![CDATA[0]]></LogColumnValues></Logging><BeforeAfter modified='1' type='bool'><![CDATA[1]]><before modified='1' type='string'><![CDATA[TRUNCATE TABLE BIDWADM.DM_SP_SL_PAY_D;]]></before><ReadFromFileBeforeSQL type='bool'><![CDATA[0]]></ReadFromFileBeforeSQL><FailOnError type='bool'><![CDATA[1]]></FailOnError></BeforeAfter></Usage></Properties >
+=+=+=+=
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S3P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "L_T_OD_SP_SL_PAY_D"
+      Partner "V0S4|V0S4P2"
+      LinkType "1"
+      ConditionNotMet "fail"
+      LookupFail "fail"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SchemaFormat"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S4"
+      OLEType "CTransformerStage"
+      Readonly "0"
+      Name "TR"
+      NextID "3"
+      InputPins "V0S4P1"
+      OutputPins "V0S4P2"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenCode"
+         Value =+=+=+=
+//
+// Generated file to implement the V0S4_m_OD_SP_SL_PAY_D_a01_TR transform operator.
+//
+
+// define our input/output link names
+inputname 0 L_S_SP_SL_PAY_D;
+outputname 0 L_T_OD_SP_SL_PAY_D;
+
+initialize {
+ // define our control variables
+ int8 RowRejected0;
+ int8 NullSetVar0;
+
+}
+
+mainloop {
+
+ // initialise the rejected row variable
+ RowRejected0 = 1;
+
+ // evaluate columns (no constraints) for link: L_T_OD_SP_SL_PAY_D
+ L_T_OD_SP_SL_PAY_D.SHOP_CD = L_S_SP_SL_PAY_D.SHOP_CD;
+ L_T_OD_SP_SL_PAY_D.POS_NO = L_S_SP_SL_PAY_D.POS_NO;
+ L_T_OD_SP_SL_PAY_D.RCPT_NO = L_S_SP_SL_PAY_D.RCPT_NO;
+ L_T_OD_SP_SL_PAY_D.PAY_SN = L_S_SP_SL_PAY_D.PAY_SN;
+ L_T_OD_SP_SL_PAY_D.CPON_NO = L_S_SP_SL_PAY_D.CPON_NO;
+ L_T_OD_SP_SL_PAY_D.APRV_NO = L_S_SP_SL_PAY_D.APRV_NO;
+ L_T_OD_SP_SL_PAY_D.OAPRV_NO = L_S_SP_SL_PAY_D.OAPRV_NO;
+ L_T_OD_SP_SL_PAY_D.CARD_NO = L_S_SP_SL_PAY_D.CARD_NO;
+ L_T_OD_SP_SL_PAY_D.CARD_KD_CD = L_S_SP_SL_PAY_D.CARD_KD_CD;
+ L_T_OD_SP_SL_PAY_D.ISSCO_CD = L_S_SP_SL_PAY_D.ISSCO_CD;
+ L_T_OD_SP_SL_PAY_D.TRML_NO = L_S_SP_SL_PAY_D.TRML_NO;
+ L_T_OD_SP_SL_PAY_D.REG_MENU_ID = L_S_SP_SL_PAY_D.REG_MENU_ID;
+ L_T_OD_SP_SL_PAY_D.REG_ID = L_S_SP_SL_PAY_D.REG_ID;
+ L_T_OD_SP_SL_PAY_D.REG_DTTM = timestamp_from_ustring(L_S_SP_SL_PAY_D.REG_DTTM);
+ L_T_OD_SP_SL_PAY_D.MOD_MENU_ID = L_S_SP_SL_PAY_D.MOD_MENU_ID;
+ L_T_OD_SP_SL_PAY_D.MOD_ID = L_S_SP_SL_PAY_D.MOD_ID;
+ L_T_OD_SP_SL_PAY_D.MOD_DTTM = timestamp_from_ustring(L_S_SP_SL_PAY_D.MOD_DTTM);
+ L_T_OD_SP_SL_PAY_D.ETL_LD_DTTM = current_timestamp();
+ writerecord 0;
+ RowRejected0 = 0;
+}
+
+finish {
+}
+
+=+=+=+=
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenCache"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxClassName"
+         Value "V0S4_m_OD_SP_SL_PAY_D_a01_TR"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenWarnings"
+         Value =+=+=+=
+TR
+   WARNING: Error in output column derivation expression for column PAY_SN in link L_T_OD_SP_SL_PAY_D. 
+       - potential data or precision loss converting from int32 to decimal
+
+=+=+=+=
+      END DSSUBRECORD
+      ValidationStatus "0"
+      StageType "CTransformerStage"
+      BlockSize "0"
+      StageVarsMinimised "0"
+      LoopVarsMaximised "0"
+      MaxLoopIterations "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S4P1"
+      OLEType "CTrxInput"
+      Readonly "0"
+      Name "L_S_SP_SL_PAY_D"
+      Partner "V0S2|V0S2P1"
+      LinkType "1"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Schema"
+         Value =+=+=+=
+record
+(
+  COMP_CD:ustring[max=4];
+  SHOP_CD:ustring[max=10];
+  SL_DT:ustring[max=8];
+  POS_NO:ustring[max=10];
+  RCPT_NO:ustring[max=10];
+  PYMTHD_SE_CD:ustring[max=1];
+  PAY_SN:int32;
+  ISTM_MCNT_CD:nullable ustring[max=2];
+  CPON_NO:nullable ustring[max=20];
+  ARB_PAY_YN:nullable ustring[max=1];
+  VLDT_DT:nullable ustring[max=8];
+  APRV_NO:nullable ustring[max=20];
+  OAPRV_NO:nullable ustring[max=20];
+  PUCO_CD:nullable ustring[max=4];
+  CARD_NO:nullable ustring[max=200];
+  CARD_KD_CD:nullable ustring[max=10];
+  ISSCO_CD:nullable ustring[max=10];
+  TRML_NO:nullable ustring[max=20];
+  DEAL_DT:nullable ustring[max=8];
+  DEAL_TM:nullable ustring[max=8];
+  PAY_SCH_AMT:nullable decimal[20,4];
+  CHGM_AMT:nullable decimal[20,4];
+  TOT_PAY_AMT:nullable decimal[20,4];
+  DEAL_CRNCY_CD:nullable ustring[max=3];
+  DEAL_CRNCY_AMT:nullable decimal[20,4];
+  DEAL_EXRT:nullable decimal[12,6];
+  REG_MENU_ID:ustring[max=100];
+  REG_ID:ustring[max=30];
+  REG_DTTM:ustring[max=34];
+  MOD_MENU_ID:ustring[max=100];
+  MOD_ID:ustring[max=30];
+  MOD_DTTM:ustring[max=34];
+)
+=+=+=+=
+      END DSSUBRECORD
+      MultiRow "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S4P2"
+      OLEType "CTrxOutput"
+      Readonly "0"
+      Name "L_T_OD_SP_SL_PAY_D"
+      Partner "V0S3|V0S3P1"
+      Reject "0"
+      ErrorPin "0"
+      RowLimit "0"
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "COMP_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "4"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.COMP_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.COMP_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.COMP_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "COMP_CD"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SHOP_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.SHOP_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.SHOP_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.SHOP_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "SHOP_CD"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SL_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "8"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.SL_DT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.SL_DT"
+         SourceColumn "L_S_SP_SL_PAY_D.SL_DT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "SL_DT"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "POS_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "30"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.POS_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.POS_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.POS_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "POS_NO"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RCPT_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "30"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.RCPT_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.RCPT_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.RCPT_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "RCPT_NO"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PYMTHD_SE_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "1"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "0"
+         Derivation "L_S_SP_SL_PAY_D.PYMTHD_SE_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.PYMTHD_SE_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.PYMTHD_SE_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PYMTHD_SE_CD"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PAY_SN"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "18"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "1"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.PAY_SN"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.PAY_SN"
+         SourceColumn "L_S_SP_SL_PAY_D.PAY_SN"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PAY_SN"
+         APTFieldProp "quote=none"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ISTM_MCNT_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "2"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.ISTM_MCNT_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.ISTM_MCNT_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.ISTM_MCNT_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ISTM_MCNT_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CPON_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.CPON_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.CPON_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.CPON_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CPON_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ARB_PAY_YN"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "1"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.ARB_PAY_YN"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.ARB_PAY_YN"
+         SourceColumn "L_S_SP_SL_PAY_D.ARB_PAY_YN"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ARB_PAY_YN"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VLDT_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.VLDT_DT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.VLDT_DT"
+         SourceColumn "L_S_SP_SL_PAY_D.VLDT_DT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "VLDT_DT"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "APRV_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.APRV_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.APRV_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.APRV_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "APRV_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "OAPRV_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.OAPRV_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.OAPRV_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.OAPRV_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "OAPRV_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PUCO_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "4"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.PUCO_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.PUCO_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.PUCO_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PUCO_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CARD_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "400"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.CARD_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.CARD_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.CARD_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CARD_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CARD_KD_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.CARD_KD_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.CARD_KD_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.CARD_KD_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CARD_KD_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ISSCO_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "20"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.ISSCO_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.ISSCO_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.ISSCO_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ISSCO_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "TRML_NO"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.TRML_NO"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.TRML_NO"
+         SourceColumn "L_S_SP_SL_PAY_D.TRML_NO"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "TRML_NO"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_DT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.DEAL_DT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.DEAL_DT"
+         SourceColumn "L_S_SP_SL_PAY_D.DEAL_DT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_DT"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_TM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "8"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "20"
+         Derivation "L_S_SP_SL_PAY_D.DEAL_TM"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.DEAL_TM"
+         SourceColumn "L_S_SP_SL_PAY_D.DEAL_TM"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_TM"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "PAY_SCH_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Derivation "L_S_SP_SL_PAY_D.PAY_SCH_AMT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.PAY_SCH_AMT"
+         SourceColumn "L_S_SP_SL_PAY_D.PAY_SCH_AMT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "PAY_SCH_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "CHGM_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Derivation "L_S_SP_SL_PAY_D.CHGM_AMT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.CHGM_AMT"
+         SourceColumn "L_S_SP_SL_PAY_D.CHGM_AMT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "CHGM_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "TOT_PAY_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Derivation "L_S_SP_SL_PAY_D.TOT_PAY_AMT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.TOT_PAY_AMT"
+         SourceColumn "L_S_SP_SL_PAY_D.TOT_PAY_AMT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "TOT_PAY_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_CRNCY_CD"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "3"
+         Scale "0"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Derivation "L_S_SP_SL_PAY_D.DEAL_CRNCY_CD"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.DEAL_CRNCY_CD"
+         SourceColumn "L_S_SP_SL_PAY_D.DEAL_CRNCY_CD"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_CRNCY_CD"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_CRNCY_AMT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "20"
+         Scale "4"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "22"
+         Derivation "L_S_SP_SL_PAY_D.DEAL_CRNCY_AMT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.DEAL_CRNCY_AMT"
+         SourceColumn "L_S_SP_SL_PAY_D.DEAL_CRNCY_AMT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_CRNCY_AMT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DEAL_EXRT"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "2"
+         Precision "12"
+         Scale "6"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "14"
+         Derivation "L_S_SP_SL_PAY_D.DEAL_EXRT"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.DEAL_EXRT"
+         SourceColumn "L_S_SP_SL_PAY_D.DEAL_EXRT"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "DEAL_EXRT"
+         APTFieldProp "quote=none, null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_MENU_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "200"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "14"
+         Derivation "L_S_SP_SL_PAY_D.REG_MENU_ID"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.REG_MENU_ID"
+         SourceColumn "L_S_SP_SL_PAY_D.REG_MENU_ID"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_MENU_ID"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "14"
+         Derivation "L_S_SP_SL_PAY_D.REG_ID"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.REG_ID"
+         SourceColumn "L_S_SP_SL_PAY_D.REG_ID"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_ID"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "REG_DTTM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "11"
+         Precision "26"
+         Scale "6"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "26"
+         Derivation "L_S_SP_SL_PAY_D.REG_DTTM"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.REG_DTTM"
+         SourceColumn "L_S_SP_SL_PAY_D.REG_DTTM"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "REG_DTTM"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_MENU_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "200"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "26"
+         Derivation "L_S_SP_SL_PAY_D.MOD_MENU_ID"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.MOD_MENU_ID"
+         SourceColumn "L_S_SP_SL_PAY_D.MOD_MENU_ID"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_MENU_ID"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_ID"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "-9"
+         Precision "60"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "26"
+         Derivation "L_S_SP_SL_PAY_D.MOD_ID"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.MOD_ID"
+         SourceColumn "L_S_SP_SL_PAY_D.MOD_ID"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_ID"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "MOD_DTTM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "11"
+         Precision "26"
+         Scale "6"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "26"
+         Derivation "L_S_SP_SL_PAY_D.MOD_DTTM"
+         Group "0"
+         ParsedDerivation "L_S_SP_SL_PAY_D.MOD_DTTM"
+         SourceColumn "L_S_SP_SL_PAY_D.MOD_DTTM"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "MOD_DTTM"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ETL_LD_DTTM"
+         Description =+=+=+=
+<none>
+Searchable? N 
+=+=+=+=
+         SqlType "11"
+         Precision "26"
+         Scale "6"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "26"
+         Derivation "CurrentTimestamp()"
+         Group "0"
+         ParsedDerivation "CurrentTimestamp()"
+         SortKey "0"
+         SortType "0"
+         TableDef "ODBC\\VERTICA_BIDW\\BIDWADM_CO.OD_SP_SL_PAY_D"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "ETL_LD_DTTM"
+         APTFieldProp "null_field=''"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Schema"
+         Value =+=+=+=
+record
+(
+  COMP_CD:ustring[max=4];
+  SHOP_CD:ustring[max=20];
+  SL_DT:ustring[max=8];
+  POS_NO:ustring[max=30];
+  RCPT_NO:ustring[max=30];
+  PYMTHD_SE_CD:ustring[max=1];
+  PAY_SN:decimal[18,0];
+  ISTM_MCNT_CD:nullable ustring[max=2];
+  CPON_NO:nullable ustring[max=60];
+  ARB_PAY_YN:nullable ustring[max=1];
+  VLDT_DT:nullable ustring[max=8];
+  APRV_NO:nullable ustring[max=60];
+  OAPRV_NO:nullable ustring[max=60];
+  PUCO_CD:nullable ustring[max=4];
+  CARD_NO:nullable ustring[max=400];
+  CARD_KD_CD:nullable ustring[max=20];
+  ISSCO_CD:nullable ustring[max=20];
+  TRML_NO:nullable ustring[max=60];
+  DEAL_DT:nullable ustring[max=8];
+  DEAL_TM:nullable ustring[max=8];
+  PAY_SCH_AMT:nullable decimal[20,4];
+  CHGM_AMT:nullable decimal[20,4];
+  TOT_PAY_AMT:nullable decimal[20,4];
+  DEAL_CRNCY_CD:nullable ustring[max=3];
+  DEAL_CRNCY_AMT:nullable decimal[20,4];
+  DEAL_EXRT:nullable decimal[12,6];
+  REG_MENU_ID:ustring[max=200];
+  REG_ID:ustring[max=60];
+  REG_DTTM:timestamp;
+  MOD_MENU_ID:ustring[max=200];
+  MOD_ID:ustring[max=60];
+  MOD_DTTM:timestamp;
+  ETL_LD_DTTM:nullable timestamp;
+)
+=+=+=+=
+      END DSSUBRECORD
+      LeftTextPos "440"
+      TopTextPos "265"
+      LinkMinimised "0"
+   END DSRECORD
+END DSJOB

@@ -1,0 +1,109 @@
+BEGIN HEADER
+   CharacterSet "CP949"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "${DS_SERVER_NAME}"
+   ToolInstanceID "${DS_PROJECT}"
+   MDISVersion "1.0"
+   Date "${EXPORT_DATE}"
+   Time "${EXPORT_TIME}"
+   ServerVersion "11.7"
+END HEADER
+BEGIN DSJOB
+   Identifier "${JOB_NAME}"
+   DateModified "${EXPORT_DATE}"
+   TimeModified "${EXPORT_TIME}"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "${JOB_NAME}"
+      Description "Sales payment detail load (templated)"
+      NextID "1"
+      Container "V0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "P_ETL_SET"
+         Prompt "P_ETL_SET parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_ETL_SET"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "P_ERP_MS"
+         Prompt "P_ERP_MS parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_ERP_MS"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "P_DW_VER"
+         Prompt "P_DW_VER parameters"
+         Default "(As pre-defined)"
+         HelpTxt "P_DW_VER"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      // Full-load job: no date parameters required
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "S_SP_SL_PAY_D|T_TARGET|TR"
+      END DSSUBRECORD
+      JobType "3"
+      Category "\\Jobs\\01.JOB\\01.ODS\\01.ERP"
+   END DSRECORD
+
+   // SOURCE STAGE (kept minimal; uses P_ERP_MS parameter set)
+   BEGIN DSRECORD
+      Identifier "V0S2"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "S_SP_SL_PAY_D"
+      NextID "2"
+      OutputPins "V0S2P1"
+      StageType "ODBCConnectorPX"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value =+=+=+=
+<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>1</Context><Variant type='string'>3.5</Variant></Common><Connection><DataSource modified='1' type='string'><![CDATA[#${SOURCE_PARAM}.$${SOURCE_PARAM}_ODBC#]]></DataSource><Username modified='1' type='string'><![CDATA[#${SOURCE_PARAM}.$${SOURCE_PARAM}_USER#]]></Username><Password modified='1' type='string'><![CDATA[#${SOURCE_PARAM}.$${SOURCE_PARAM}_PWD#]]></Password></Connection><Usage><SQL><SelectStatement modified='1' type='string'><![CDATA[${SOURCE_SQL}]]></SelectStatement></SQL></Usage></Properties >
+=+=+=+=
+      END DSSUBRECORD
+   END DSRECORD
+
+   // TRANSFORMER placeholder (use pass-through in your studio or reuse from DSX)
+   BEGIN DSRECORD
+      Identifier "V0S4"
+      OLEType "CTransformerStage"
+      Readonly "0"
+      Name "TR"
+      InputPins "V0S4P1"
+      OutputPins "V0S4P2"
+   END DSRECORD
+
+   // TARGET STAGE (parameterized schema.table and delete-before SQL)
+   BEGIN DSRECORD
+      Identifier "V0S3"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "T_TARGET"
+      NextID "2"
+      InputPins "V0S3P1"
+      StageType "ODBCConnectorPX"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value =+=+=+=
+<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>2</Context><Variant type='string'>3.5</Variant></Common><Connection><DataSource modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_ODBC#]]></DataSource><Username modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_USER#]]></Username><Password modified='1' type='string'><![CDATA[#P_DW_VER.$P_DW_VER_PWD#]]></Password></Connection><Usage><GenerateSQL modified='1' type='bool'><![CDATA[1]]></GenerateSQL><TableName modified='1' type='string'><![CDATA[${TARGET_SCHEMA}.${TARGET_TABLE}]]></TableName><BeforeAfter modified='1' type='bool'><![CDATA[1]]><before modified='1' type='string'><![CDATA[TRUNCATE TABLE ${TARGET_SCHEMA}.${TARGET_TABLE};]]></before></BeforeAfter></Usage></Properties >
+=+=+=+=
+      END DSSUBRECORD
+   END DSRECORD
+
+END DSJOB
