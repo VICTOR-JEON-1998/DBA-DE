@@ -144,3 +144,50 @@ ORDER BY qs.total_elapsed_time DESC
 
 Last Updated: 2025-10-30
 
+---
+
+## Post‑Tuning Validation (Result Consistency Check)
+
+After query tuning, always compare the original and tuned results.
+
+Workflow:
+- Run the pre‑tuning query and persist results to an origin table, e.g., `ZZ_<subject>_origin`.
+- Run the post‑tuning query and persist results to a tuned table, e.g., `ZZ_<subject>_tune`.
+- Validate equality by alternating EXCEPT checks in both directions. Both must return zero rows.
+
+Example (SQL Server):
+```sql
+-- 1) Materialize results
+SELECT /* pre-tuning */ *
+INTO ZZ_sales_origin
+FROM (
+    -- original query here
+) o;
+
+SELECT /* post-tuning */ *
+INTO ZZ_sales_tune
+FROM (
+    -- tuned query here
+) t;
+
+-- 2) Compare both directions (set equality)
+-- origin - tuned should be empty
+SELECT *
+FROM ZZ_sales_origin
+EXCEPT
+SELECT *
+FROM ZZ_sales_tune;
+
+-- tuned - origin should be empty
+SELECT *
+FROM ZZ_sales_tune
+EXCEPT
+SELECT *
+FROM ZZ_sales_origin;
+```
+
+Notes:
+- Use the same projected columns and data types/order for fair comparison.
+- If duplicates matter, compare with grouping keys and counts; otherwise set-based EXCEPT is sufficient.
+- Consider normalizing time/precision or collation differences before comparison.
+
