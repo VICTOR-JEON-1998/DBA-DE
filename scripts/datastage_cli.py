@@ -33,7 +33,7 @@ def main() -> None:
         "DS_PROJECT": project,
         "EXPORT_DATE": os.environ.get("EXPORT_DATE", "2025-10-30"),
         "EXPORT_TIME": os.environ.get("EXPORT_TIME", "13.38.34"),
-        "JOB_NAME": os.environ.get("JOB_NAME", "DM_SP_SL_PAY_D_LOAD"),
+        "JOB_NAME": os.environ.get("JOB_NAME", "edit_DM_SP_SL_PAY_D_LOAD"),
         # Source is DW schema now (full copy from ODS into DM)
         "SOURCE_PARAM": os.environ.get("SOURCE_PARAM", "P_DW_VER"),
         "SOURCE_SQL": os.environ.get(
